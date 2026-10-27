@@ -1,5 +1,5 @@
 // Pocket Cedi offline support. Bump VERSION when you upload a new index.html.
-const VERSION = 'pocket-cedi-v3';
+const VERSION = 'pocket-cedi-v4';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -12,6 +12,8 @@ self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
+  // Let the video stream straight from the network (phones request it in pieces).
+  if (url.pathname.endsWith('.mp4')) return;
   // The page itself: try the network first so updates arrive, fall back to the saved copy offline.
   if (req.mode === 'navigate') {
     e.respondWith(fetch(req).then(res => { const copy = res.clone(); caches.open(VERSION).then(c => c.put('./index.html', copy)); return res; })
