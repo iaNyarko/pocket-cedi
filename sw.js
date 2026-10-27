@@ -1,5 +1,5 @@
 // Pocket Cedi offline support. Bump VERSION when you upload a new index.html.
-const VERSION = 'pocket-cedi-v4';
+const VERSION = 'pocket-cedi-v5';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
