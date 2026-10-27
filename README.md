@@ -7,8 +7,9 @@ Pocket Cedi is a free spending tracker built for how people in Ghana actually ha
 
 **Open the app:** https://ianyarko.github.io/pocket-cedi/
 
-<img src="tutorial-poster.jpg" alt="Pocket Cedi on a phone, showing the Overview screen" width="260">
+> 📺 **Reading this much text is not in your budget?** No wahala. Skip all of it and [watch the 1:44 video tutorial](tutorial.mp4) instead. It costs GH₵ 0.00 and doesn't count against your Data & airtime limit (much).
 
+<a href="tutorial.mp4"><img src="tutorial-poster.jpg" alt="Watch the Pocket Cedi video tutorial" width="260"></a>
 ---
 
 ## Why this exists
