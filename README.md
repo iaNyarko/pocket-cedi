@@ -1,4 +1,3 @@
-[README (1).md](https://github.com/user-attachments/files/34020554/README.1.md)
 # Pocket Cedi
 
 **Track every cedi you spend, in cash and on MoMo, from pay day to pay day.**
@@ -7,9 +6,10 @@ Pocket Cedi is a free spending tracker built for how people in Ghana actually ha
 
 **Open the app:** https://ianyarko.github.io/pocket-cedi/
 
-> 📺 **Reading this much text is not in your budget?** No wahala. Skip all of it and [watch the 1:44 video tutorial](tutorial.mp4) instead. It costs GH₵ 0.00 and doesn't count against your Data & airtime limit (much).
+> 📺 **Reading this much text is not in your budget?** No wahala. Skip all of it and [watch the 1:47 video tutorial](tutorial.mp4) instead. It costs GH₵ 0.00 and doesn’t count against your Data & airtime limit (much).
 
 <a href="tutorial.mp4"><img src="tutorial-poster.jpg" alt="Watch the Pocket Cedi video tutorial" width="260"></a>
+
 ---
 
 ## Why this exists
@@ -31,7 +31,9 @@ Pocket Cedi started as a personal tool for a simple question: *where did my mone
 | | |
 |---|---|
 | **Spending** | Log an amount, category, detail (e.g. Food › Eating out), wallet, note and tags. Edit or delete any entry. |
-| **Paste MoMo SMS** | Paste an MTN MoMo, Telecel Cash or AT Money message. Pocket Cedi reads the amount, fee, recipient, reference, wallet, date and balance, and suggests a category. |
+| **Paste MoMo SMS** | Paste one or several MTN MoMo, Telecel Cash or AT Money messages at once. Pocket Cedi reads the amount, fee, recipient, reference, wallet, date and balance, and suggests a category for each. |
+| **Duplicate check** | Every MoMo message has a Transaction ID. Paste one you’ve already logged and Pocket Cedi warns you before it counts it twice. |
+| **Count my cash** | Type what’s actually in your pocket. If it doesn’t match the app, log the difference in one tap and your balance is right again. |
 | **Wallet balances** | Cash and each MoMo wallet keep a running balance. A tick box lines your MoMo balance up with the one in the message. |
 | **Cash-out & cash-in** | Moving your own money between MoMo and cash is a transfer, not spending. The fee is logged separately. |
 | **Budgets** | A monthly limit per category. Amber at 80%, red when you go over, plus a “per day until pay day” figure. |
@@ -41,7 +43,7 @@ Pocket Cedi started as a personal tool for a simple question: *where did my mone
 | **Search** | Find entries by word or tag (`bolt`, `lunch`, `#work`). |
 | **Backup & restore** | Save everything to one file; restore it on a new phone. |
 | **Export** | Download all entries as a CSV file to open in Excel. |
-| **Tour & help** | A short welcome tour, a video tutorial and answers to common questions, all inside the app. |
+| **Tour & help** | A short welcome tour, a video tutorial, answers to common questions and a feedback button, all inside the app. |
 
 ---
 
@@ -84,11 +86,19 @@ When your salary arrives, add it with **+ Money in → Salary** (or paste the sa
 3. Check the preview. If the type is wrong, switch it (Spending, Money in, Cash-out, Cash-in, I lent it).
 4. Tap **Continue**, confirm the category, and save. Keep **Match my balance** ticked.
 
+**Several MoMo messages at once:** copy them one after another into the box (or paste a block of them). Pocket Cedi lists each one with a category picker, so you can check them and tap **Save** once. Anything you’ve already logged is flagged and left unticked.
+
+**Cash-outs and cash-ins** at a MoMo agent: tap **Move**. It’s your own money changing wallets, so it doesn’t count as spending. Any fee is logged separately.
+
 ### 5. Lent or borrowed money?
 
 Use the **Loans** tab: **+ I lent money** or **+ I borrowed**. When someone pays you back, open the loan and tap **Record repayment**, or just paste their MoMo message and Pocket Cedi will ask if it’s them paying you back.
 
-### 6. Back up every week
+### 6. Check your cash now and then
+
+On **Overview**, tap **Count my cash** and type what’s in your pocket. If you forgot to log something, Pocket Cedi records the difference so your balance matches real life again.
+
+### 7. Back up every week
 
 In **Budgets → Backup & restore**, tap **Save backup** and keep the file somewhere safe (Files, iCloud Drive, Google Drive, email). To move to a new phone, install Pocket Cedi there and tap **Restore**.
 
@@ -119,6 +129,9 @@ Tip: when sending MoMo, type a clear reference like `lunch` or `data` instead of
 
 ## Frequently asked questions
 
+**My cash doesn’t match the app.**
+Tap **Count my cash** on Overview and type what you counted. Pocket Cedi logs the difference.
+
 **My balance doesn’t match my MoMo message.**
 Paste the latest MoMo message and keep “Match my balance” ticked. Pocket Cedi adds a small correction so the two agree again.
 
@@ -147,13 +160,14 @@ Pocket Cedi is a single-page web app with no build step and no dependencies.
 | `sw.js` | Service worker that lets the app open offline |
 | `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`, `apple-touch-icon.png` | App icons |
 | `tutorial.mp4`, `tutorial-poster.jpg` | Video tutorial and its preview image |
+| `welcome.jpg`, `bg.jpg`, `card.jpg`, `sms.jpg`, `move.jpg`, `count.jpg`, `loans.jpg`, `empty.jpg` | Photos used around the app (see Credits) |
 
 It is hosted for free on **GitHub Pages** from the `main` branch.
 
 ### Releasing an update
 
 1. Upload the new `index.html` (and any other changed files) to the repository.
-2. In `sw.js`, bump the version line, e.g. `pocket-cedi-v4` → `pocket-cedi-v5`, and upload it too.
+2. In `sw.js`, bump the version line, e.g. `pocket-cedi-v6` → `pocket-cedi-v7`, and upload it too.
 3. Wait for the green ✓ next to **github-pages**. Phones pick up the new version the next time the app is opened online.
 
 ---
@@ -167,7 +181,26 @@ It is hosted for free on **GitHub Pages** from the `main` branch.
 - This period vs last period comparison
 - PIN lock
 
-Suggestions and bug reports are welcome. Open an **Issue** on this repository and, for MoMo messages that aren’t read correctly, paste the message with any personal names and numbers replaced.
+Suggestions and bug reports are welcome. Use **Send feedback** in the app (Budgets → Help) or open an **Issue** on this repository and, for MoMo messages that aren’t read correctly, paste the message with any personal names and numbers replaced.
+
+---
+
+## Credits
+
+Photos are from [Unsplash](https://unsplash.com) and used under the [Unsplash License](https://unsplash.com/license). Thank you to the photographers:
+
+| Where in the app | Photo |
+|---|---|
+| Welcome screen | Man by the “Ghana LK” street sign, Accra |
+| App background | Independence Arch, Black Star Square, Accra |
+| Spending card | Cedi notes and coins |
+| Paste SMS | Man checking his phone |
+| Move money | MoMo agent kiosk |
+| Count my cash | Hands counting a note |
+| Loans | Man in sunglasses and fila |
+| Empty Overview | Market street with a wheelbarrow |
+
+<!-- Add each photographer's name and Unsplash link here, e.g. “Photo by Ama Mensah on Unsplash” -->
 
 ---
 

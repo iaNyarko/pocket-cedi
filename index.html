@@ -281,11 +281,61 @@ textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line)
   padding:calc(12px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
 .vidov video{max-width:100%;max-height:100%;border-radius:16px;background:#000}
 .vidov button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));border:0;border-radius:999px;padding:9px 16px;font-weight:800;background:#fff;color:#14201A}
+/* v6: photos, kente background, multi-SMS, count my cash */
+html{background:var(--bg)}
+body{background:transparent}
+#appbg{position:fixed;inset:0;z-index:-1;background:url(bg.jpg) center 30%/cover;opacity:.85;pointer-events:none}
+#appbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 18%,transparent),color-mix(in srgb,var(--bg) 45%,transparent) 55%,color-mix(in srgb,var(--bg) 70%,transparent))}
+header{background:color-mix(in srgb,var(--bg) 72%,transparent)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.hero{background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 86%,transparent) 30%,color-mix(in srgb,var(--accent) 52%,transparent)),url(card.jpg) center 70%/cover,var(--accent)}
+.hero .big,.hero .stats b{text-shadow:0 1px 6px rgba(0,0,0,.25)}
+.guide{background:var(--bg)!important}
+.guide::before{content:"";position:fixed;left:0;right:0;top:0;height:60vh;background:url(welcome.jpg) center 38%/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent);mask-image:linear-gradient(180deg,#000 62%,transparent);pointer-events:none}
+.guide .gin{position:relative}
+.gart{margin-top:40vh;width:96px;height:96px;border-radius:28px}
+.gart svg{width:46px;height:46px}
+.gtop{background:rgba(10,14,12,.4);border-radius:999px;padding:4px 6px 4px 12px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.gskip{color:#fff!important}.gdots i{background:rgba(255,255,255,.45)!important}.gdots i.on{background:#fff!important}
+.guyban{position:relative;border-radius:18px;overflow:hidden;min-height:min(300px,62vw);display:flex;align-items:flex-end;background:#2c3440 url(loans.jpg) center 20%/cover;box-shadow:var(--shadow)}
+.guyban::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(10,14,12,.8))}
+.guyban div{position:relative;color:#fff;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.guyban b{font-family:var(--f-display);font-size:22px;line-height:1.1}
+.guyban span{font-size:13px;opacity:.92}
+.emptyph{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.emptyph .ph{height:min(230px,30vh);background:#8aa url(empty.jpg) center 62%/cover}
+.emptyph .tx{padding:14px 18px 18px;display:flex;flex-direction:column;gap:6px;text-align:center;color:var(--muted);font-size:14px}
+.emptyph strong{color:var(--ink);font-family:var(--f-display);font-size:19px}
+.sheet.smssh .sms-photo{order:-1;margin:-18px calc(-1 * max(16px,env(safe-area-inset-left,0px))) -4px;height:min(250px,32vh);background:#c9873a url(sms.jpg) center 80%/cover;border-radius:22px 22px 0 0;position:relative;flex:none}
+.sheet.smssh .sms-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 78%,var(--surface));border-radius:inherit}
+.sheet.movesh .mv-photo{order:-1;margin:-18px calc(-1 * max(16px,env(safe-area-inset-left,0px))) -4px;height:min(260px,34vh);background:#5a4318 url(move.jpg) center 55%/cover;border-radius:22px 22px 0 0;position:relative;flex:none}
+.sheet.movesh .mv-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,var(--surface));border-radius:inherit}
+.sheet.count .cc-photo{order:-1;margin:-18px calc(-1 * max(16px,env(safe-area-inset-left,0px))) -4px;height:min(320px,42vh);background:#2c3440 url(count.jpg) center 45%/cover;border-radius:22px 22px 0 0;position:relative;flex:none}
+.sheet.count .cc-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,var(--surface));border-radius:inherit}
+.ccrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ccrow div{background:var(--sunk);border-radius:12px;padding:10px 12px;min-width:0}
+.ccrow span{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.ccrow b{font-family:var(--f-display);font-size:20px;white-space:nowrap}
+.dupwarn{background:var(--bad-soft);color:var(--bad);border-radius:12px;padding:10px 12px;font-size:14px;font-weight:600}
+.mrow{border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.mrow.off{opacity:.55}
+.mhead{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:center}
+.mhead input{width:20px;height:20px;margin:0;accent-color:var(--accent)}
+.mhead .mt{min-width:0}
+.mhead .mt b{display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mhead .mt small{color:var(--muted);font-size:12px}
+.mhead .ma{font-family:var(--f-display);font-weight:700;white-space:nowrap}
+.mhead .ma.in{color:var(--ok)}
+.mrow select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font:inherit;font-size:14px}
+.mrow select.need{border-color:var(--bad)}
+.fbrow{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--sunk);border-radius:14px;padding:12px 14px}
+.fbrow b{display:block;font-size:14px}.fbrow small{color:var(--muted);font-size:13px}
+.fbrow a{flex:none;text-decoration:none}
 </style>
 </head>
 <body>
 
 
+<div id="appbg" aria-hidden="true"></div>
 <header>
   <div class="hrow">
     <div class="brandrow"><div class="brand">Pocket <span>Cedi</span></div><button class="helpbtn" id="helpBtn" aria-label="How to use Pocket Cedi">?</button></div>
@@ -327,7 +377,7 @@ const CATS=[
  {id:'susu',name:'Susu & savings',hint:'Susu, savings, investments',c:'#16A34A',ab:'SS',subs:['Susu','Savings','Investment']},
  {id:'health',name:'Health',hint:'Pharmacy, clinic, NHIS',c:'#DC2626',ab:'HE',subs:['Pharmacy','Clinic/hospital','NHIS']},
  {id:'personal',name:'Personal & clothing',hint:'Clothes, barber, salon',c:'#7C8B2E',ab:'PC',subs:['Clothes','Barber/salon','Toiletries']},
- {id:'other',name:'Other',hint:'Fees and anything else',c:'#78716C',ab:'OT',subs:['MoMo & bank fees','Other']},
+ {id:'other',name:'Other',hint:'Fees and anything else',c:'#78716C',ab:'OT',subs:['MoMo & bank fees','Unrecorded spending','Other']},
 ];
 const CAT=Object.fromEntries(CATS.map(c=>[c.id,c]));
 const METHODS=[{id:'cash',name:'Cash'},{id:'mtn',name:'MTN MoMo'},{id:'telecel',name:'Telecel Cash'},{id:'at',name:'AT Money'},{id:'card',name:'Bank / card'}];
@@ -473,7 +523,7 @@ function quickStrip(){
 }
 
 function moneyCard(c){
-  let h='<section class="card money"><div class="ch"><h2>Your money now</h2>'+(c.hasMoney?'<span class="sub">All wallets</span>':'')+'</div>';
+  let h='<section class="card money"><div class="ch"><h2>Your money now</h2>'+(c.hasMoney?'<button class="linkbtn" data-act="count">Count my cash</button>':'')+'</div>';
   if(!c.hasMoney){
     h+='<p class="note" style="margin:0">Add the cash and MoMo you have right now as your starting point. Add your salary when it lands. Pocket Cedi then shows what is left in each wallet as you spend.</p>';
   }else{
@@ -513,7 +563,7 @@ function overview(c){
 
   let html=modeNote()+(c.isCurrent?quickStrip():'')+hero+moneyCard(c);
   html+=loansCard();
-  if(!c.items.length&&state.ready)return html+(alerts.length?'<div class="alerts">'+alerts.join('')+'</div>':'')+'<section class="card"><div class="empty"><strong>No spending logged this period</strong>Tap the green + button to add what you spent: trotro fare, lunch, data, anything.</div></section>';
+  if(!c.items.length&&state.ready)return html+(alerts.length?'<div class="alerts">'+alerts.join('')+'</div>':'')+'<section class="emptyph"><div class="ph" aria-hidden="true"></div><div class="tx"><strong>Nothing in the barrow yet</strong><span>No spending logged this period. Tap the green + to add your first one: trotro fare, lunch, data, anything.</span></div></section>';
   html+=(alerts.length?'<div class="alerts">'+alerts.join('')+'</div>':'');
   html+='<section class="card"><div class="ch"><h2>Day by day</h2><span class="sub">'+(c.isCurrent?'Today highlighted':'Past period')+'</span></div>'+dailyChart(c)+'</section>';
 
@@ -737,6 +787,7 @@ function openSpend(item,opts){
     const pendingTag=normTag($('#tagIn').value);if(pendingTag&&!tags.includes(pendingTag))tags.push(pendingTag);
     const data={amount,cat,sub,method,note,date,tags,createdAt:item?.createdAt||Date.now()};
     if(it.payee)data.payee=it.payee;
+    if(opts.txid)data.txid=opts.txid;
     const fee=(!item&&method!=='cash'&&$('#fee'))?toPes($('#fee').value):0;
     const walBefore=walletBalances();
     $('#saveBtn').disabled=true;
@@ -773,7 +824,7 @@ function openIn(item,opts){
     const amount=toPes($('#amt').value);
     if(amount<=0)return showErr('Enter the amount.');
     const date=$('#date').value||ymd(new Date());
-    const data={kind:'in',amount,source,to,note:$('#note').value.trim(),date,createdAt:item?.createdAt||Date.now()};
+    const data={kind:'in',amount,source,to,note:$('#note').value.trim(),date,createdAt:item?.createdAt||Date.now()};if(opts.txid)data.txid=opts.txid;
     const walBefore=walletBalances();
     $('#saveBtn').disabled=true;
     try{const id=await saveDoc('money',item?.id,data);
@@ -789,11 +840,12 @@ function openMove(item,opts){
   const it=item||Object.assign({amount:0,from:'mtn',to:'cash',note:'',date:ymd(new Date())},opts.prefill||{});
   let from=it.from,to=it.to;
   sheetShell(item?'Edit moved money':'Move money',
-    amountField(it.amount)+'<p class="note" style="margin:-6px 0 0">For cash-outs, deposits and transfers between your own wallets. It doesn’t count as spending.</p>'+
+    '<div class="mv-photo" aria-hidden="true"></div>'+amountField(it.amount)+'<p class="note" style="margin:-6px 0 0">For cash-outs, deposits and transfers between your own wallets. It doesn’t count as spending.</p>'+
     chipGroup('From','fromChips','f',METHODS,from)+chipGroup('To','toChips','t',METHODS,to)+
     (item?'':feeField(opts.fee,'Logged as spending under Other › MoMo & bank fees, paid from the “From” wallet.'))+
     noteDate(it.note,it.date,'e.g. MoMo cash-out')+balanceCheck(opts),
     item,'Delete this transfer of '+cedi(it.amount)+'?');
+  $('#sheet').classList.add('movesh');
   wireChips('fromChips','f',v=>from=v);wireChips('toChips','t',v=>to=v);
   if(!item&&!opts.fromSms)setTimeout(()=>$('#amt')&&$('#amt').focus(),60);
   $('#sheet').onsubmit=async e=>{
@@ -802,7 +854,7 @@ function openMove(item,opts){
     if(amount<=0)return showErr('Enter the amount you moved.');
     if(from===to)return showErr('Pick two different wallets.');
     const date=$('#date').value||ymd(new Date()), note=$('#note').value.trim();
-    const data={kind:'move',amount,from,to,note,date,createdAt:item?.createdAt||Date.now()};
+    const data={kind:'move',amount,from,to,note,date,createdAt:item?.createdAt||Date.now()};if(opts.txid)data.txid=opts.txid;
     const fee=item?0:toPes($('#fee').value);
     const walBefore=walletBalances();
     $('#saveBtn').disabled=true;
@@ -867,40 +919,114 @@ function parseSms(raw){
   if(payee){const prev=state.exp.filter(e=>e.payee&&e.payee.toLowerCase()===payee.toLowerCase()).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0))[0];if(prev){cat=prev.cat;sub=prev.sub||'';}}
   if(!cat){const hay=payee+' '+ref+' '+text;for(const [k,c,s] of KEYWORDS)if(k.test(hay)){cat=c;sub=s;break;}}
   const salary=/salary|payroll|wages/i.test(text);
-  return {type,amount:main,fee,bal,wallet,payee,ref,date,cat,sub,salary};
+  const tm=text.match(/transaction\s*id:?\s*(\d{6,})/i);
+  return {type,amount:main,fee,bal,wallet,payee,ref,date,cat,sub,salary,txid:tm?tm[1]:''};
+}
+function splitSms(raw){
+  const t=String(raw||'').trim();if(!t)return [];
+  const starts=/(?=(?:Payment (?:made|received) for|Payment for GHS|Payment of GHS|Cash ?Out made|Cash ?In received|Your payment of|You have received|Confirmed\.\s*GHS|Transfer (?:made|of|received)))/gi;
+  let parts=t.split(starts).map(x=>x.trim()).filter(x=>x.length>15);
+  if(parts.length<=1){const bl=t.split(/\n\s*\n+/).map(x=>x.trim()).filter(x=>x.length>15);if(bl.length>1)parts=bl;}
+  return parts;
+}
+function findDup(tx){
+  if(!tx)return null;const k='sms-'+tx;
+  for(const e of state.exp)if(e.txid===tx||e.id===k)return {what:(CAT[e.cat]||CAT.other).name,amount:e.amount,date:e.date};
+  for(const m of state.money)if(m.txid===tx||m.id===k)return {what:m.kind==='move'?'Transfer':'Money in',amount:m.amount,date:m.date};
+  for(const l of state.loans){if(l.txid===tx||l.id===k)return {what:'Loan · '+l.person,amount:l.amount,date:l.date};for(const p of (l.payments||[]))if(p.txid===tx)return {what:'Repayment · '+l.person,amount:p.amount,date:p.date};}
+  return null;
+}
+const dupLine=d=>'Already logged on '+fmtD(parse(d.date))+': '+cedi(d.amount)+' ('+esc(d.what)+'). Saving it again would count it twice.';
+function smsChoices(r){
+  const o=[];let def='';
+  if(r.type==='spend'){
+    const ml=findLoan(r.payee,'borrowed');if(ml){o.push(['repay:'+ml.id,'Paying back '+ml.person]);def='repay:'+ml.id;}
+    for(const c of CATS)o.push({g:c.name,items:subsFor(c.id).map(x=>['exp:'+c.id+'|'+x,x]).concat([['exp:'+c.id+'|','No detail']])});
+    o.push(['lend','I lent it (loan)']);
+    if(!def&&r.cat)def='exp:'+r.cat+'|'+(r.sub||'');
+  }else if(r.type==='in'){
+    const ml=findLoan(r.payee,'lent');if(ml){o.push(['repay:'+ml.id,ml.person+' paying you back']);def='repay:'+ml.id;}
+    o.push(['in:salary','Salary'],['in:other','Other income'],['borrow','I borrowed it (loan)']);
+    if(!def)def=r.salary?'in:salary':'in:other';
+  }else if(r.type==='cashout'){o.push(['cashout','Cash-out (MoMo → Cash)'],['exp:other|Other','Spending']);def='cashout';}
+  else{o.push(['cashin','Cash-in (my own cash onto MoMo)'],['in:other','Money sent to me']);def='cashin';}
+  return {o,def};
+}
+function choiceSelect(i,ch){
+  const opt=([v,l])=>'<option value="'+esc(v)+'"'+(v===ch.def?' selected':'')+'>'+esc(l)+'</option>';
+  return '<select data-mi="'+i+'" aria-label="Save as"'+(ch.def?'':' class="need"')+'>'+(ch.def?'':'<option value="" selected>Pick a category…</option>')+
+    ch.o.map(x=>Array.isArray(x)?opt(x):'<optgroup label="'+esc(x.g)+'">'+x.items.map(opt).join('')+'</optgroup>').join('')+'</select>';
+}
+async function saveSmsAs(r,v){
+  const now=Date.now(),tx=r.txid||'';
+  if(v.startsWith('exp:')){const [c,sb]=v.slice(4).split('|');
+    await saveDoc('exp',null,{amount:r.amount,cat:c,sub:sb||'',method:r.wallet,note:r.ref&&r.payee?r.payee+' – '+r.ref:(r.payee||r.ref||''),payee:r.payee,date:r.date,tags:[],createdAt:now,txid:tx});
+    if(r.fee>0)await saveDoc('exp',null,Object.assign(feeNote(r.wallet,''),{amount:r.fee,date:r.date,tags:[],createdAt:now+1}));}
+  else if(v.startsWith('in:'))await saveDoc('money',null,{kind:'in',amount:r.amount,source:v.slice(3),to:r.wallet,note:[r.payee,r.ref].filter(Boolean).join(' – '),date:r.date,createdAt:now,txid:tx});
+  else if(v==='cashout'){await saveDoc('money',null,{kind:'move',amount:r.amount,from:r.wallet,to:'cash',note:'Cash-out'+(r.payee?' at '+r.payee:''),date:r.date,createdAt:now,txid:tx});
+    if(r.fee>0)await saveDoc('exp',null,Object.assign(feeNote(r.wallet,'cash-out'),{amount:r.fee,date:r.date,tags:[],createdAt:now+1}));}
+  else if(v==='cashin')await saveDoc('money',null,{kind:'move',amount:r.amount,from:'cash',to:r.wallet,note:'Cash-in'+(r.payee?' at '+r.payee:''),date:r.date,createdAt:now,txid:tx});
+  else if(v==='lend'||v==='borrow')await saveDoc('loan',null,{dir:v==='lend'?'lent':'borrowed',amount:r.amount,person:shortName(r.payee)||'Someone',payee:r.payee,wallet:r.wallet,date:r.date,due:'',note:'',payments:[],closed:false,createdAt:now,txid:tx});
+  else if(v.startsWith('repay:')){const l=state.loans.find(x=>x.id===v.slice(6));if(l){const amt=Math.min(r.amount,owedOf(l));
+    await saveDoc('loan',l.id,Object.assign({},stripId(l),{payments:(l.payments||[]).concat({id:'p'+uid(),amount:amt,wallet:r.wallet,date:r.date,createdAt:now,txid:tx})}));}}
 }
 function openSms(){
   sheetShell('Paste a MoMo SMS',
-    '<p class="note" style="margin:0">Open your messages, press and hold the MoMo message, tap Copy, then paste it below. Works with MTN MoMo, Telecel Cash and AT Money messages.</p>'+
-    '<textarea id="smsIn" rows="6" placeholder="Paste the message here" aria-label="MoMo message"></textarea>'+
+    '<p class="note" style="margin:0">Open your messages, press and hold a MoMo message, tap Copy, then paste it below. You can paste several messages at once. Works with MTN MoMo, Telecel Cash and AT Money.</p>'+
+    '<div class="sms-photo" aria-hidden="true"></div>'+
+    '<textarea id="smsIn" rows="6" placeholder="Paste one or more messages here" aria-label="MoMo messages"></textarea>'+
     '<div id="smsOut"></div>',null,'','Read message');
-  const out=()=>{
-    const r=parseSms($('#smsIn').value);$('#err').hidden=true;
-    if(!r){$('#smsOut').innerHTML='';return null;}
-    if(r.error){$('#smsOut').innerHTML='';showErr(r.error);return null;}
+  $('#sheet').classList.add('smssh');
+  let mode='single',parsed=null,rows=[];
+  const single=r=>{
     const label=r.type==='in'?'Money in':r.type==='cashout'?'Cash-out (MoMo → Cash)':r.type==='cashin'?'Cash-in (Cash → '+METH[r.wallet].name+')':'Spending';
-    const wal=walletBalances();
-    let h='<div class="smscard"><div class="smst">'+label+'</div><div class="smsamt num'+(r.type==='in'?' in':'')+'">'+(r.type==='in'?'+':'')+cedi(r.amount)+'</div><dl>'+
+    const wal=walletBalances(),dup=findDup(r.txid);
+    let h=(dup?'<div class="dupwarn">'+dupLine(dup)+'</div>':'')+'<div class="smscard"><div class="smst">'+label+'</div><div class="smsamt num'+(r.type==='in'?' in':'')+'">'+(r.type==='in'?'+':'')+cedi(r.amount)+'</div><dl>'+
       (r.payee?'<dt>'+(r.type==='in'?'From':'To')+'</dt><dd>'+esc(r.payee)+'</dd>':'')+
       (r.ref?'<dt>Reference</dt><dd>'+esc(r.ref)+'</dd>':'')+
       (r.fee?'<dt>Fee / tax</dt><dd class="num">'+cedi(r.fee)+'</dd>':'')+
       '<dt>Wallet</dt><dd>'+esc(METH[r.wallet].name)+'</dd><dt>Date</dt><dd>'+fmtD(parse(r.date))+'</dd>'+
       (r.type==='spend'&&r.cat?'<dt>Category</dt><dd>'+esc(CAT[r.cat].name)+(r.sub?' › '+esc(r.sub):'')+'</dd>':'')+
       (r.bal!=null?'<dt>Balance in SMS</dt><dd class="num">'+cedi(r.bal)+'</dd>':'')+'</dl>';
-    if(r.bal!=null){const delta=(r.type==='in'||r.type==='cashin')?r.amount-r.fee:-(r.amount+r.fee);const after=(wal[r.wallet]||0)+delta;
+    if(r.bal!=null&&!dup){const delta=(r.type==='in'||r.type==='cashin')?r.amount-r.fee:-(r.amount+r.fee);const after=(wal[r.wallet]||0)+delta;
       if(Math.abs(after-r.bal)>=1)h+='<p class="note" style="margin:0;color:var(--warn)">After this, Pocket Cedi would show '+cedi(after)+' on '+esc(METH[r.wallet].name)+'. You can match it to the message on the next step.</p>';
       else h+='<p class="note" style="margin:0;color:var(--ok)">Your '+esc(METH[r.wallet].name)+' balance will match the message.</p>';}
     const ml=r.type==='in'?findLoan(r.payee,'lent'):r.type==='spend'?findLoan(r.payee,'borrowed'):null;
-    if(ml)h+='<div class="loanhint"><span>'+(r.type==='in'?'Is this <b>'+esc(ml.person)+'</b> paying you back? They owe you '+cedi(owedOf(ml))+'.':'Are you paying back <b>'+esc(ml.person)+'</b>? You owe '+cedi(owedOf(ml))+'.')+'<button type="button" class="btn sm2" data-as="repay:'+esc(ml.id)+'">Yes, record repayment</button></div>';
+    if(ml&&!dup)h+='<div class="loanhint"><span>'+(r.type==='in'?'Is this <b>'+esc(ml.person)+'</b> paying you back? They owe you '+cedi(owedOf(ml))+'.':'Are you paying back <b>'+esc(ml.person)+'</b>? You owe '+cedi(owedOf(ml))+'.')+'</span><button type="button" class="btn sm2" data-as="repay:'+esc(ml.id)+'">Yes, record repayment</button></div>';
     h+='<p class="note" style="margin:0">Wrong type? <button type="button" class="linkbtn" data-as="spend">Spending</button> · <button type="button" class="linkbtn" data-as="in">Money in</button> · <button type="button" class="linkbtn" data-as="cashout">Cash-out</button> · <button type="button" class="linkbtn" data-as="cashin">Cash-in</button> · <button type="button" class="linkbtn" data-as="'+(r.type==='in'?'borrow':'lend')+'">'+(r.type==='in'?'I borrowed it':'I lent it')+'</button></p></div>';
-    $('#smsOut').innerHTML=h;$('#saveBtn').textContent='Continue';return r;
+    $('#smsOut').innerHTML=h;$('#saveBtn').textContent=dup?'Log it again anyway':'Continue';
   };
-  let parsed=null;
-  $('#smsIn').addEventListener('input',()=>{parsed=out();});
-  $('#smsIn').addEventListener('paste',()=>setTimeout(()=>{parsed=out();},0));
+  const multi=()=>{
+    const ok=rows.filter(x=>!x.r.error),hasBal=ok.some(x=>x.r.bal!=null);
+    let h='<div class="ch"><h2 style="font-size:16px">'+ok.length+' messages found</h2><span class="sub">Check each one</span></div>';
+    rows.forEach((x,i)=>{
+      if(x.r.error){h+='<div class="mrow off"><div class="note">Message '+(i+1)+': couldn’t read an amount. Paste it on its own to check it.</div></div>';return;}
+      const r=x.r,inc=r.type==='in'||r.type==='cashin';
+      const kind=r.type==='in'?'Money in':r.type==='cashout'?'Cash-out':r.type==='cashin'?'Cash-in':'Spending';
+      h+='<div class="mrow'+(x.on?'':' off')+'" id="mr'+i+'"><div class="mhead"><input type="checkbox" data-mon="'+i+'"'+(x.on?' checked':'')+' aria-label="Include this message"><div class="mt"><b>'+esc(r.payee||kind)+'</b><small>'+kind+' · '+esc(METH[r.wallet].name)+' · '+fmtD(parse(r.date))+(r.fee?' · fee '+cedi(r.fee):'')+'</small></div><div class="ma'+(inc?' in':'')+'">'+(inc?'+':'')+cedi(r.amount)+'</div></div>'+
+        (x.dup?'<div class="dupwarn">'+dupLine(x.dup)+'</div>':'')+choiceSelect(i,x.ch)+'</div>';
+    });
+    if(hasBal)h+='<label class="check"><input type="checkbox" id="mMatch" checked> Match my balances to the last message for each wallet</label>';
+    $('#smsOut').innerHTML=h;
+    const n=rows.filter(x=>x.on&&!x.r.error).length;$('#saveBtn').textContent=n?'Save '+n+' message'+(n===1?'':'s'):'Nothing selected';
+  };
+  const out=()=>{
+    $('#err').hidden=true;
+    const parts=splitSms($('#smsIn').value);
+    if(!parts.length){$('#smsOut').innerHTML='';parsed=null;mode='single';$('#saveBtn').textContent='Read message';return null;}
+    if(parts.length===1){mode='single';const r=parseSms(parts[0]);parsed=r;
+      if(!r||r.error){$('#smsOut').innerHTML='';if(r)showErr(r.error);return null;}
+      single(r);return r;}
+    mode='multi';
+    rows=parts.map(t=>{const r=parseSms(t);if(!r||r.error)return {r:r||{error:true},on:false};const dup=findDup(r.txid);return {r,dup,on:!dup,ch:smsChoices(r),val:''};});
+    rows.forEach(x=>{if(x.ch)x.val=x.ch.def;});
+    multi();return rows;
+  };
+  $('#smsIn').addEventListener('input',out);
+  $('#smsIn').addEventListener('paste',()=>setTimeout(out,0));
   setTimeout(()=>$('#smsIn')&&$('#smsIn').focus(),60);
   const go=(r,as)=>{
-    const t=as||r.type, o={fromSms:true,smsWallet:r.wallet,smsBal:r.bal,fee:r.fee};
+    const t=as||r.type, o={fromSms:true,smsWallet:r.wallet,smsBal:r.bal,fee:r.fee,txid:r.txid};
     if(t.startsWith('repay:')){const l=state.loans.find(x=>x.id===t.slice(6));if(l)openRepay(l,Object.assign(o,{prefill:{amount:Math.min(r.amount,owedOf(l)),wallet:r.wallet,date:r.date}}));return;}
     if(t==='lend'||t==='borrow'){openLoan(null,Object.assign(o,{prefill:{dir:t==='lend'?'lent':'borrowed',amount:r.amount,person:shortName(r.payee),payee:r.payee,wallet:r.wallet,date:r.date,note:'',due:''}}));return;}
     if(t==='in')openIn(null,Object.assign(o,{prefill:{amount:r.amount,source:r.salary?'salary':'other',to:r.wallet,note:[r.payee,r.ref].filter(Boolean).join(' – '),date:r.date}}));
@@ -908,8 +1034,67 @@ function openSms(){
     else if(t==='cashout')openMove(null,Object.assign(o,{prefill:{amount:r.amount,from:r.wallet,to:'cash',note:'Cash-out'+(r.payee?' at '+r.payee:''),date:r.date}}));
     else openSpend(null,Object.assign(o,{prefill:{amount:r.amount,cat:r.cat,sub:r.sub,method:r.wallet,note:r.ref&&r.payee?r.payee+' – '+r.ref:(r.payee||r.ref),payee:r.payee,date:r.date,tags:[]}}));
   };
-  $('#smsOut').onclick=e=>{const b=e.target.closest('[data-as]');if(b&&parsed&&!parsed.error)go(parsed,b.dataset.as);};
-  $('#sheet').onsubmit=e=>{e.preventDefault();parsed=out();if(parsed&&!parsed.error){if($('#saveBtn').dataset.ready)go(parsed);else{$('#saveBtn').dataset.ready='1';go(parsed);}}else if(!parsed)showErr('Paste a MoMo message first.');};
+  $('#smsOut').addEventListener('click',e=>{const b=e.target.closest('[data-as]');if(b&&mode==='single'&&parsed&&!parsed.error)go(parsed,b.dataset.as);});
+  $('#smsOut').addEventListener('change',e=>{
+    const t=e.target;
+    if(t.dataset.mon!=null){const x=rows[+t.dataset.mon];x.on=t.checked;multi();return;}
+    if(t.dataset.mi!=null){const x=rows[+t.dataset.mi];x.val=t.value;t.classList.toggle('need',!t.value);}
+  });
+  $('#sheet').onsubmit=async e=>{
+    e.preventDefault();
+    if(mode==='single'){const r=out();if(r&&!r.error)go(r);else if(!$('#smsIn').value.trim())showErr('Paste a MoMo message first.');return;}
+    const pick=rows.filter(x=>x.on&&!x.r.error);
+    if(!pick.length)return showErr('Tick at least one message to save.');
+    const miss=pick.find(x=>!x.val);if(miss)return showErr('Pick a category for '+(miss.r.payee||'each spending message')+'.');
+    const match=$('#mMatch')?$('#mMatch').checked:false;
+    $('#saveBtn').disabled=true;
+    try{
+      for(const x of pick)await saveSmsAs(x.r,x.val);
+      if(match){const last={};for(const x of pick)if(x.r.bal!=null)last[x.r.wallet]=x.r;
+        for(const w in last){const r=last[w],diff=r.bal-(walletBalances()[w]||0);
+          if(Math.abs(diff)>=1){if(diff>0)await saveDoc('money',null,{kind:'in',amount:diff,source:'other',to:w,note:'Balance correction from SMS',date:r.date,createdAt:Date.now()});
+            else await saveDoc('exp',null,{amount:-diff,cat:'other',sub:'Unrecorded spending',method:w,note:'Balance correction from SMS',date:r.date,tags:[],createdAt:Date.now()});}}}
+      closeSheet();toast('Saved '+pick.length+' message'+(pick.length===1?'':'s'));
+    }catch(err){saveErr(err);}
+  };
+}
+
+/* ---------- count my cash ---------- */
+function openCount(){
+  let wallet='cash';
+  sheetShell('Count my cash',
+    '<div class="cc-photo" aria-hidden="true"></div>'+
+    '<p class="note" style="margin:0">Count what’s in your pocket and type it in. If it doesn’t match, Pocket Cedi can log the difference so your balance is right again.</p>'+
+    '<div class="amount-in"><span>GH₵</span><input id="amt" inputmode="decimal" autocomplete="off" placeholder="0.00" aria-label="Amount you counted"></div>'+
+    chipGroup('Which wallet?','walChips','w',METHODS,wallet)+
+    '<div class="ccrow"><div><span>App says</span><b class="num" id="ccApp"></b></div><div><span>Difference</span><b class="num" id="ccDiff">—</b></div></div>'+
+    '<p class="note" id="ccHint" style="margin:0"></p>',null,'','Check');
+  $('#sheet').classList.add('count');
+  const upd=()=>{
+    const app=walletBalances()[wallet]||0,v=$('#amt').value.trim(),got=toPes(v),diff=got-app;
+    $('#ccApp').textContent=cedi(app);
+    const d=$('#ccDiff'),b=$('#saveBtn'),hint=$('#ccHint');
+    if(!v){d.textContent='—';d.style.color='';b.textContent='Check';hint.textContent='';return;}
+    d.textContent=(diff>0?'+':'')+cedi(diff);d.style.color=diff<0?'var(--bad)':diff>0?'var(--ok)':'var(--ok)';
+    if(Math.abs(diff)<1){b.textContent='All good, close';hint.textContent='Spot on. Your '+METH[wallet].name.toLowerCase()+' matches.';}
+    else if(diff<0){b.textContent='Log '+cedi(-diff)+' as forgotten spending';hint.textContent='Remember what it was? Close this and add it as a normal spend instead, so it lands in the right category.';}
+    else{b.textContent='Add '+cedi(diff)+' I forgot to record';hint.textContent='You have more than the app expects. Maybe some money in wasn’t logged.';}
+  };
+  wireChips('walChips','w',v=>{wallet=v;$('#shT').textContent=v==='cash'?'Count my cash':'Check my '+METH[v].name+' balance';upd();});
+  $('#amt').addEventListener('input',upd);upd();
+  setTimeout(()=>$('#amt')&&$('#amt').focus(),80);
+  $('#sheet').onsubmit=async e=>{
+    e.preventDefault();
+    const v=$('#amt').value.trim();if(!v)return showErr('Type how much you counted.');
+    const app=walletBalances()[wallet]||0,diff=toPes(v)-app,date=ymd(new Date());
+    if(Math.abs(diff)<1){closeSheet();toast('Your '+METH[wallet].name.toLowerCase()+' matches');return;}
+    $('#saveBtn').disabled=true;
+    try{
+      if(diff<0)await saveDoc('exp',null,{amount:-diff,cat:'other',sub:'Unrecorded spending',method:wallet,note:'Count difference',date,tags:[],createdAt:Date.now()});
+      else await saveDoc('money',null,{kind:'in',amount:diff,source:'other',to:wallet,note:'Count difference',date,createdAt:Date.now()});
+      closeSheet();toast(METH[wallet].name+' now shows '+cedi(toPes(v)));
+    }catch(err){saveErr(err);}
+  };
 }
 
 /* ---------- loans ---------- */
@@ -941,6 +1126,8 @@ function loansView(){
   let h=modeNote()+'<section class="card"><div class="ch"><h2>Loans</h2></div><div class="loansum"><div><span>Owed to you</span><b class="num inok">'+cedi(t.owed)+'</b></div><div><span>You owe</span><b class="num owe">'+cedi(t.owe)+'</b></div></div>'+
     '<div class="btns"><button class="btn" data-act="lend">+ I lent money</button><button class="btn ghost" data-act="borrow">+ I borrowed</button></div>'+
     '<p class="note" style="margin:0">Loans move money in and out of your wallets, but they don’t count as spending or income.</p></section>';
+  const lentOpen=open.filter(l=>l.dir==='lent');
+  if(t.owed>0)h+='<div class="guyban" role="img" aria-label="A man in sunglasses counting money"><div><b>Collect your money.</b><span>'+(lentOpen.length===1?esc(lentOpen[0].person)+' owes you '+cedi(t.owed):lentOpen.length+' people owe you '+cedi(t.owed))+'</span></div></div>';
   if(!state.loans.length)return h+'<section class="card"><div class="empty"><strong>No loans yet</strong>When you lend money to a friend or borrow some, add it here. You’ll see who still owes what, and when it’s due.</div></section>';
   const lent=open.filter(l=>l.dir==='lent'),borr=open.filter(l=>l.dir==='borrowed');
   if(lent.length)h+='<section class="card" style="gap:4px"><div class="ch"><h2>Owed to you</h2><span class="sub">'+lent.length+' open</span></div><div class="day">'+lent.map(loanRow).join('')+'</div></section>';
@@ -973,6 +1160,7 @@ function openLoan(item,opts){
     if(due&&due<date)return showErr('The due date is before the loan date.');
     const data={dir,amount,person,wallet,date,due,note:$('#note').value.trim(),payments:item?.payments||[],closed:!!item?.closed,createdAt:item?.createdAt||Date.now()};
     if(it.payee)data.payee=it.payee;
+    if(opts.txid)data.txid=opts.txid;
     const walBefore=walletBalances();
     $('#saveBtn').disabled=true;
     try{const id=await saveDoc('loan',item?.id,data);
@@ -1026,7 +1214,7 @@ function openRepay(l,opts){
     if(amount<=0)return showErr('Enter the amount repaid.');
     if(amount>o)return showErr('That’s more than the '+cedi(o)+' still owed. Check the amount.');
     const date=$('#date').value||ymd(new Date());
-    const pay={id:'p'+uid(),amount,wallet,date,createdAt:Date.now()};
+    const pay={id:'p'+uid(),amount,wallet,date,createdAt:Date.now()};if(opts.txid)pay.txid=opts.txid;
     const walBefore=walletBalances();
     $('#saveBtn').disabled=true;
     try{await saveDoc('loan',l.id,Object.assign({},stripId(l),{payments:(l.payments||[]).concat(pay)}));
@@ -1062,9 +1250,9 @@ function guideSteps(){
   const st=[
    {i:'cedi',t:'Welcome to Pocket Cedi',b:'Track every cedi you spend, in cash and on MoMo, and see where your money goes from pay day to pay day.',tip:'<b>Private by design.</b> Your entries stay on this phone. No account, no sign-in, and it works without data.',act:['Watch the video instead','video']},
    {i:'home',t:'Put it on your home screen',b:isIOS?'In Safari, tap the Share button, then “Add to Home Screen”. Always open Pocket Cedi from that icon.':'In Chrome, tap ⋮ then “Install app” or “Add to Home screen”. Always open Pocket Cedi from that icon.',tip:isIOS?'<b>Important on iPhone:</b> the home-screen icon keeps its own saved data, separate from Safari. Pick one and stick to it.':'',skip:isStandalone()},
-   {i:'wallet',t:'Start with the money you have',b:'Tap “+ Money in” and choose “Money I already have”. Add one entry for your cash and one for each MoMo wallet.',tip:'Pocket Cedi then keeps each wallet’s balance up to date as you spend.',act:['Add money I have now','in']},
+   {i:'wallet',t:'Start with the money you have',b:'Tap “+ Money in” and choose “Money I already have”. Add one entry for your cash and one for each MoMo wallet.',tip:'Pocket Cedi keeps each wallet’s balance up to date. If your cash ever feels off, tap “Count my cash” to check it.',act:['Add money I have now','in']},
    {i:'cal',t:'Set your pay day and budget',b:'In Budgets, pick the day your salary usually lands, then set a monthly limit for the categories you want to control.',tip:'Categories turn amber at 80% of the limit and red when you go over.',act:['Open Budgets','budgets']},
-   {i:'sms',t:'Log what you spend',b:'Tap the green + to add spending. For MoMo, copy the payment message and tap “Paste SMS”. The amount, fee and balance fill in for you.',tip:'<b>Tip:</b> type a clear reference like “lunch” or “data” when you send MoMo. The app uses it to pick the category.'},
+   {i:'sms',t:'Log what you spend',b:'Tap the green + to add spending. For MoMo, copy the payment messages and tap “Paste SMS”. You can paste several at once, and the amount, fee and balance fill in for you.',tip:'<b>Tip:</b> paste the same message twice and Pocket Cedi warns you, so nothing gets counted double.'},
    {i:'loan',t:'Lent or borrowed money?',b:'Use the Loans tab. A loan moves money out of your wallet without counting as spending, and you can record repayments as they come in.',tip:'Paste the repayment SMS and Pocket Cedi asks if it’s that person paying you back.'},
    {i:'shield',t:'Back up every week',b:'Your records live only on this phone. In Budgets → Backup & restore, tap “Save backup” and keep the file in Files, iCloud Drive or your email.',tip:'If you change phones, install Pocket Cedi on the new one and tap Restore.'},
   ];
@@ -1098,11 +1286,15 @@ function openVideo(){
   const v=h.querySelector('video');v.addEventListener('ended',close);
   const p=v.play();if(p&&p.catch)p.catch(()=>{});
 }
+const FEEDBACK_WHATSAPP=''; // put a number like 233241234567 here to receive feedback on WhatsApp
+function feedbackUrl(){return FEEDBACK_WHATSAPP?'https://wa.me/'+FEEDBACK_WHATSAPP+'?text='+encodeURIComponent('Pocket Cedi feedback: '):'https://github.com/iaNyarko/pocket-cedi/issues/new';}
 function helpCard(){
   return '<section class="card faq" id="helpCard"><div class="ch"><h2>Help</h2><button class="linkbtn" data-act="tour">Show the tour again</button></div>'+
-  '<button class="vidcard" data-act="video"><span class="th"><img src="tutorial-poster.jpg" alt="" loading="lazy"><i></i></span><span><b>Reading this much is not in your budget?</b><small>No wahala. Watch the 1:44 video instead. It costs GH₵ 0.00.</small></span></button>'+
+  '<button class="vidcard" data-act="video"><span class="th"><img src="tutorial-poster.jpg" alt="" loading="lazy"><i></i></span><span><b>Reading this much is not in your budget?</b><small>No wahala. Watch the 1:47 video instead. It costs GH₵ 0.00.</small></span></button>'+
+  '<div class="fbrow"><span><b>Found a bug or have an idea?</b><small>Tell us. Every message gets read.</small></span><a class="btn ghost sm" href="'+feedbackUrl()+'" target="_blank" rel="noopener">Send feedback</a></div>'+
   '<details><summary>How does Paste SMS pick the category?</summary><p>It remembers the category you chose last time for the same person, and reads words like “bundle”, “ECG” or “Bolt” in the name or reference. If it can’t tell, you pick. Always check before you tap Add.</p></details>'+
   '<details><summary>My balance doesn’t match my MoMo message</summary><p>Paste the latest MoMo message and keep “Match my balance” ticked. Pocket Cedi adds a small correction so it lines up again.</p></details>'+
+  '<details><summary>My cash doesn’t match the app</summary><p>Tap “Count my cash” on Overview and type what’s in your pocket. Pocket Cedi logs the difference so the balance is right again.</p></details>'+
   '<details><summary>What counts as spending?</summary><p>Only things you buy or pay for. Moving money between your own wallets (cash-out, cash-in) and loans don’t count, so your budget stays honest.</p></details>'+
   '<details><summary>I got a new phone</summary><p>On the old phone, save a backup. On the new phone, open Pocket Cedi, add it to the home screen, then go to Budgets → Backup & restore → Restore and pick the file.</p></details>'+
   '<details><summary>My salary came in but the budget didn’t start</summary><p>Open that entry and make sure “What is it?” is set to Salary. The monthly budget starts once a Salary entry exists.</p></details>'+
@@ -1176,6 +1368,7 @@ $('#main').addEventListener('click',async e=>{
     if(v==='in')openIn(null);else if(v==='move')openMove(null);else if(v==='sms')openSms();
     else if(v==='backup')backupNow();
     else if(v==='tour')openGuide(0);
+    else if(v==='count')openCount();
     else if(v==='video')openVideo();
     else if(v==='restore')startRestore();
     else if(v==='lend'||v==='borrow')openLoan(null,{prefill:{dir:v==='lend'?'lent':'borrowed'}});
