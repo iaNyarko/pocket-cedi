@@ -122,7 +122,8 @@ Tip: when sending MoMo, type a clear reference like `lunch` or `data` instead of
 
 - There is no server and no account. Pocket Cedi stores everything in your phone’s browser storage.
 - Nothing you log is ever uploaded, including to this repository.
-- The only network requests are for the app files themselves, the fonts and, if you tap play, the tutorial video.
+- The only network requests are for the app files themselves, the fonts, the tutorial video (if you tap play) and an anonymous visit counter.
+- The visit counter is [GoatCounter](https://www.goatcounter.com): it counts how many people open the app, with no cookies and no personal data. It never sees anything you log.
 - Because the data lives on one phone, **deleting the app or losing the phone without a backup means losing your records.** Back up weekly.
 
 ---
@@ -167,7 +168,7 @@ It is hosted for free on **GitHub Pages** from the `main` branch.
 ### Releasing an update
 
 1. Upload the new `index.html` (and any other changed files) to the repository.
-2. In `sw.js`, bump the version line, e.g. `pocket-cedi-v6` → `pocket-cedi-v7`, and upload it too.
+2. In `sw.js`, bump the version line, e.g. `pocket-cedi-v7` → `pocket-cedi-v8`, and upload it too.
 3. Wait for the green ✓ next to **github-pages**. Phones pick up the new version the next time the app is opened online.
 
 ---
